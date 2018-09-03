@@ -17,6 +17,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 int main() {
     printf("Hello, Raj from /src!\n");
 
+
     GLFWwindow *window;
 
     /* Initialize the library */
@@ -41,6 +42,25 @@ int main() {
     printf("%u\n", vertexBuffer);
     glfwSetKeyCallback(window, key_callback);
 
+    float points[] = {
+            0.0f,  0.5f,  0.0f,
+            0.5f, -0.5f,  0.0f,
+            -0.5f, -0.5f,  0.0f
+    };
+
+    GLuint vbo = 0;
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(float), points, GL_STATIC_DRAW);
+
+    GLuint vao = 0;
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, NULL);
+
+    
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
         /* Render here */
