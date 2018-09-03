@@ -43,9 +43,9 @@ int main() {
     glfwSetKeyCallback(window, key_callback);
 
     float points[] = {
-            0.0f,  0.5f,  0.0f,
-            0.5f, -0.5f,  0.0f,
-            -0.5f, -0.5f,  0.0f
+            -1.0f,  1.0f,  0.0f,
+            1.0f, -1.0f,  0.0f,
+            -1.0f, -1.0f,  0.0f
     };
 
     GLuint vbo = 0;
@@ -102,6 +102,7 @@ int main() {
 
         // wipe the drawing surface clear
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClearColor(1.0f, 0.3f, 0.3f, 1.0f);
         glUseProgram(shader_programme);
         glBindVertexArray(vao);
         // draw points 0-3 from the currently bound VAO with current in-use shader
