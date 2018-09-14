@@ -89,18 +89,8 @@ int main() {
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window)) {
-        /* Render here */
-//        glClear(GL_COLOR_BUFFER_BIT);
-//        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-//        glClear(GL_COLOR_BUFFER_BIT);
-
-        /* Swap front and back buffers */
-//        glfwSwapBuffers(window);
-
-        /* Poll for and process events */
-//        glfwPollEvents();
-
-        // wipe the drawing surface clear
+//        /* Render here */
+//         wipe the drawing surface clear
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(1.0f, 0.3f, 0.3f, 1.0f);
         glUseProgram(shader_programme);
